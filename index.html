@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vic</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fde2e8;
+      overflow: hidden; /* Evita barra de rolagem em dispositivos móveis */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 20px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    a {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      color: black;
+    }
+
+    #noButton {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      top: 40px; /* Ajuste a distância vertical aqui conforme necessário */
+      transition: transform 0.3s ease;
+      transform-origin: center center;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h1>Antes responda a pergunta.</h1>
+    <h2>Clica em não primeiro, para fazer um teste kkkk</h2>
+
+    <p>Você gosta de eu?</p>
+    <a onclick="alerta()">Sim</a>
+    <button id="noButton" type="button">Não</button>
+  </form>
+
+  <script>
+    function alerta() {
+      alert("ainda beeem :) ");
+      window.location.href = 'pergunta1.html';
+    }
+
+    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const button = document.getElementById("noButton");
+    const form = document.querySelector("form");
+
+    if (isMobileDevice) {
+      button.addEventListener("touchstart", function(event) {
+        const formRect = form.getBoundingClientRect();
+        const maxX = formRect.width - button.offsetWidth;
+        const maxY = formRect.height - button.offsetHeight;
+
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        const limitedX = Math.max(0, Math.min(randomX, maxX));
+        const limitedY = Math.max(0, Math.min(randomY, maxY));
+
+        button.style.transform = `translate(${limitedX}px, ${limitedY}px)`;
+      });
+    } else {
+      button.addEventListener("mouseenter", function(event) {
+        const formRect = form.getBoundingClientRect();
+        const maxX = formRect.width - button.offsetWidth;
+        const maxY = formRect.height - button.offsetHeight;
+
+        const randomX = Math.floor(Math.random() * maxX);
+        const randomY = Math.floor(Math.random() * maxY);
+
+        button.style.transform = `translate(${randomX}px, ${randomY}px)`;
+      });
+    }
+  </script>
+</body>
+</html>

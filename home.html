@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    body {
+      background-color: #fde2e8;
+      margin: 0;
+      padding: 0;
+      color: #333333;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .carousel-item {
+      text-align: center;
+    }
+
+    .carousel-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      object-fit: contain;
+      max-height: 500px;
+    }
+
+    .carousel-item video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      object-fit: contain;
+      max-height: 600px;
+    }
+
+    .cellphone-bg {
+      position: relative;
+      width: 400px;
+      height: 800px;
+      background-image: url('https://example.com/celular.png'); /* Substitua pelo link da imagem do celular desejada */
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .cellphone-content {
+      position: absolute;
+      top: 15%;
+      left: 5%;
+      width: 90%;
+      height: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header-content {
+      text-align: center;
+      color: #1a1919;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .header-content h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .header-content p {
+      font-size: 18px;
+    }
+  </style>
+  <title>Declaração</title>
+</head>
+<body>
+  <div class="cellphone-bg">
+    <div class="cellphone-content">
+      <div class="header-content">
+        <h1>Minha Declaração</h1>
+        <p>Para a pessoa mais especial da minha vida. Veja até o final!</p>
+        <p>Queria te pedir desculpas por minhas atitudes erradas, queria te dizer o que já disse algumas vezes,
+           você é muito importante para mim e quero muito que a gente possa conversar e se resolver, nesse pouco tempo já estou sentindo muito sua falta,
+           por favor, se puder pense sobre nos acertarmos e me perdoe se conseguir. Te amo!
+        </p>
+        <p>Clica na seta branca pra passar pro lado.</p>
+      </div>
+
+      <div class="container">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./imagens/1.jpg.jpeg">
+            </div>
+            <div class="carousel-item">
+              <img src="./imagens/2.jpg.jpeg">
+            </div>
+            <div class="carousel-item">
+              <img src="./imagens/3.jpg.jpeg">
+            </div>
+            <div class="carousel-item">
+              <img src="./imagens/4.jpg.jpeg">
+            </div>
+            <div class="carousel-item">
+              <img src="./imagens/5.jpg.jpeg">
+            </div>
+            <div class="carousel-item">
+              <img src="./imagens/6.jpg.jpeg">
+            </div>
+          <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+          </a>
+          <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.carousel').carousel({
+        interval: false
+      });
+    });
+  </script>
+</body>
+</html>
